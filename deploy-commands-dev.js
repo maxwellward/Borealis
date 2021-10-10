@@ -1,23 +1,23 @@
 /* 
 Adding commands:
 
-1. Add your testing server ID to config.json
-2. Add commands and their descriptions to config.json
+1. Add your testing server ID to config.json ("devServerId")
+2. Add a new command in /commands/
 3. Run 'node deploy-commands-dev.js'
 */
 
-const { SlashCommandBuilder } = require('@discordjs/builders');
+const fs = require('fs');
 const { REST } = require('@discordjs/rest');
 const { Routes } = require('discord-api-types/v9');
-const { clientId, devServerId, token, commandList } = require('./config.json');
+const { clientId, devServerId, token } = require('./config.json');
 
-const commands = []
+const commands = [];
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
-Object.entries(commandList).forEach(command => {
-	commands.push(new SlashCommandBuilder().setName(command[0]).setDescription(command[1]));
-});
-
-commands.map(command => command.toJSON());
+for (const file of commandFiles) {
+	const command = require(`./commands/${file}`);
+	commands.push(command.data.toJSON());
+}
 
 const rest = new REST({ version: '9' }).setToken(token);
 

@@ -1,0 +1,17 @@
+{
+  "name": "borealis",
+  "version": "1.0.0",
+  "description": "A Discord bot with lots of fun little features.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "Maxwell Ward",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^13.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

@@ -58,7 +58,7 @@ function parseData(raw, platform) {
 		{ name: 'Status', value: `${data.realtime.currentStateAsText}`},
 		{ name: 'Level', value: `${global.level} (${global.toNextLevelPercent}%)` },
 		{ name: 'Competitive Rank', value: `${global.rank.rankName} ${global.rank.rankDiv}` },
-		{ name: 'Total Kills', value: `${data.total.kills.value} (${data.total.kd.value}k/d)` },
+		{ name: 'Total Kills', value: `${data.total.kills.value}` },
 		{ name: 'Active Legend', value: `${data.realtime.selectedLegend}` }
 	)
 	.setTimestamp()

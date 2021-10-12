@@ -12,6 +12,6 @@ You can contribute to this project using the following steps:
 
 1. Create an issue and add a comment with your request to work on it.
 1. Fork the project and create a branch for your addition.
-2. Add your development Discord server ID and API keys to `config.json`.
+2. Add your development Discord server ID, bot token, and API keys to `config.json`.
 2. Run `nodemon` in the root directory.
 3. When you're done, create a pull request and add `Closes #[issue ID]` somewhere in your description.
